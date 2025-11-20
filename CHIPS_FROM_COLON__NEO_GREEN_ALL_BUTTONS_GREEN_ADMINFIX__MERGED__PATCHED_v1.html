@@ -1,0 +1,3197 @@
+
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<!-- merged-keys-fix v1 | 2025-08-16 -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>script</title>
+<style>
+#warrantyTable td, #warrantyTable th {
+  padding: 0.3rem;
+  text-align: center;
+  width: auto;
+  max-width: 100px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+#warrantyTable input {
+  padding: 0.25rem;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: 0.85rem;
+  width: 90px;
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a2e;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      padding: 1.8rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card button {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    
+      background: #e74c3c;
+      color: white;
+      border: none;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .card span {
+      font-size: 1.3rem;
+      font-weight: bold;
+      flex-grow: 1;
+      outline: none;
+      margin-left: 0.5rem;
+    
+      font-size: 1.1rem;
+      font-weight: bold;
+      flex-grow: 1;
+      outline: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #newCardInput, #newScriptInput {
+      width: 100%;
+      max-width: 500px;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .script-item {
+      background: #eef2f7;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .script-item input {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 0.95rem;
+    }
+
+    .script-item button {
+      padding: 0.4rem 0.6rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .copy-btn {
+      background: #3498db;
+      color: white;
+    }
+
+    .delete-btn {
+      background: #e74c3c;
+      color: white;
+    }
+
+    footer {
+      background-color: #1a1a2e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      border: none;
+      background: #1a1a2e;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0d0d1a;
+    }
+  
+#warrantyInputs input {
+  display: block;
+  margin-bottom: 10px;
+  width: 120px;
+  padding: 6px;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+#warrantyInputs button {
+  margin-top: 5px;
+  padding: 6px 12px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+    body {
+        font-family: 'Cairo', sans-serif !important;
+        background-color: #f3f4f6;
+    }
+
+    header, footer {
+        background-color: #111827 !important;
+    }
+
+    .card {
+        background: white !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+    }
+
+    .script-item {
+        background: #ffffff !important;
+        border-left: 4px solid #4fd1c5;
+    }
+
+    #toast {
+        transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+        transform: translateY(-10px);
+    }
+
+    #toast.show {
+        transform: translateY(0);
+    }
+
+    #adminBar {
+        position: sticky;
+        top: 0;
+        background-color: #e5e7eb !important;
+        z-index: 999;
+    }
+
+    .copy-btn {
+        background: #2563eb !important;
+    }
+
+    .delete-btn {
+        background: #dc2626 !important;
+    }
+
+    .admin-only {
+        background: #10b981 !important;
+    }
+    
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25) !important;
+}
+.dark-mode .card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.4) !important;
+}
+
+/* === Description (raw) + Copy Chips === */
+.desc-pre{
+  white-space: pre-wrap;
+  background: var(--surface-2, #f7f7f8);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 10px;
+  padding: .8rem .9rem;
+  line-height: 1.55;
+  margin-top: .6rem;
+  color: var(--text, #111827);
+}
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.6rem;
+}
+.prop-chip{
+  border:1px solid var(--border, #e5e7eb);
+  background: transparent;
+  color: var(--text, #111827);
+  padding:.45rem .7rem;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:.9rem;
+  transition: .2s ease;
+}
+.prop-chip:hover{ background: var(--surface-2, #f7f7f8); }
+
+</style>
+<style>
+button {
+  font-family: 'Cairo', sans-serif;
+}
+
+button[onclick^="alert"] {
+  background: #f1f1f1 !important;
+  color: #111 !important;
+  font-family: 'Cairo', sans-serif;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[onclick^="alert"]:hover {
+  background: #e0e0e0 !important;
+}
+</style><style>
+/* جدول السكربتات الموحد */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+th, td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px;
+}
+thead {
+  background-color: #f1f5f9;
+  font-weight: bold;
+}
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  text-align: right;
+  direction: rtl;
+  font-size: 0.95rem;
+}
+</style><style>
+/* تصميم جدول احترافي مشابه لـ Google Sheets */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.95rem;
+  background-color: #fff;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+th {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+th:nth-child(1) { background-color: #cfe2ff; color: #000; }
+th:nth-child(2) { background-color: #dbeafe; color: #000; }
+th:nth-child(3) { background-color: #fffacc; color: #000; }
+th:nth-child(4) { background-color: #fdecc8; color: #000; }
+th:nth-child(5) { background-color: #f3f4f6; color: #000; }
+
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+td textarea {
+  width: 100%;
+  height: 40px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  resize: none;
+  overflow: hidden;
+}
+td textarea:focus {
+  height: 120px;
+  outline: none;
+  border-color: #4fd1c5;
+  background-color: #f0fdfa;
+}
+</style>
+<style>
+.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+.dark-mode .card,
+.dark-mode .script-item,
+.dark-mode .script-item input,
+.dark-mode .script-item button {
+  background: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+}
+.card {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+button {
+  background: linear-gradient(135deg, #4fd1c5, #3bc6b0) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+button:hover {
+  transform: scale(1.05);
+}
+.dark-mode button {
+  background: linear-gradient(135deg, #2563eb, #1a56db) !important;
+}
+</style>
+<style>
+body {
+  background-color: #F3F4F6 !important;
+  color: #4B5563;
+}
+
+header, footer {
+  background-color: #111827 !important;
+  color: white;
+}
+
+.card {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  border-radius: 12px;
+}
+
+.copy-btn {
+  background-color: #00CFC9 !important;
+  color: white !important;
+}
+
+.delete-btn {
+  background-color: #EF4444 !important;
+  color: white !important;
+}
+
+button {
+  background: #00CFC9 !important;
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #00b0ad !important;
+}
+
+#productSearchInput,
+#globalSearch,
+#warrantyInput,
+input,
+textarea {
+  border: 1px solid #CBD5E1;
+  background: #FFFFFF;
+  color: #111827;
+}
+
+.admin-only {
+  background-color: #00CFC9 !important;
+  color: white !important;
+}
+
+#authStatus {
+  color: #4B5563;
+}
+</style>
+<style>
+.dark-mode {
+  background-color: #0F172A !important;
+  color: #E2E8F0 !important;
+}
+
+.dark-mode .card,
+.dark-mode .script-item,
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #1E293B !important;
+  color: #E2E8F0 !important;
+  border: 1px solid #334155 !important;
+}
+
+.dark-mode .copy-btn {
+  background-color: #00b8b3 !important;
+}
+
+.dark-mode .delete-btn {
+  background-color: #dc2626 !important;
+}
+
+.dark-mode button {
+  background-color: #00b8b3 !important;
+  color: white !important;
+}
+
+.dark-mode #authStatus {
+  color: #9CA3AF !important;
+}
+</style>
+<style>
+/* 🧠 Smart Suggestions Card */
+.smart-card{
+  background:#e0f7fa;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.smart-card button{
+  flex-shrink:0;
+}
+.dark-mode .smart-card{
+  background:#0d3b47 !important;
+  color:#e0e0e0 !important;
+}
+</style>
+
+<style>
+/* Collapsed script view */
+.script-item { position: relative; }
+.script-item .script-view { width: 100%; }
+.script-item pre {
+  max-height: 50px;
+  font-size: 0.85rem !important;
+  padding: 4px !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.script-item .fade-overlay {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 36px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  pointer-events: none;
+  display: none; /* shown only when content overflows; we toggle together with collapsed state */
+}
+.dark-mode .fade-overlay {
+  background: linear-gradient(to bottom, rgba(30,41,59,0), rgba(30,41,59,1));
+}
+/* Expanded state removes limits and overlay */
+.script-item.expanded pre {
+  max-height: none !important;
+  overflow: visible !important;
+}
+.script-item.expanded .fade-overlay {
+  display: none !important;
+}
+.toggle-btn {
+  background: #e5e7eb !important;
+  color: #111 !important;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.dark-mode .toggle-btn {
+  background: #334155 !important;
+  color: #e2e8f0 !important;
+}
+</style>
+
+
+<style>
+.script-item pre {
+  max-height: 50px;
+  font-size: 0.85rem !important;
+  padding: 4px !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.script-item:hover pre {
+  max-height: 1000px !important; /* expand fully */
+}
+.script-item .fade-overlay {
+  display: none !important; /* not needed now */
+}
+</style>
+
+
+<style>
+/* Compact admin editing spacing */
+.admin-only + #scriptsContainer .script-item,
+#scriptsContainer .script-item {
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+/* Ensure buttons are compact too */
+.script-item button {
+  padding: 4px 8px !important;
+  font-size: 0.85rem !important;
+  border-radius: 6px !important;
+}
+</style>
+
+
+<style>
+/* Compact spacing for admin buttons */
+.script-item .copy-btn,
+.script-item .delete-btn {
+  margin-right: 4px !important;
+}
+</style>
+
+
+<style>
+/* Tighter layout for script items and buttons */
+.script-item { gap: 4px !important; padding: 6px 8px !important; }
+.script-item .copy-btn, .script-item .delete-btn { margin-right: 2px !important; }
+</style>
+
+
+<!-- ✦ Injected: Neo Green + Black Pro Theme + Ultra Glow (single-file inline) -->
+<style>
+
+/* =========================================================
+   NEO GREEN ✦ BLACK — Pro Theme (Drop‑in override)
+   Paste this <link> AFTER your current styles, or copy the block
+   to the very end of <head>. No JS changes required.
+   ---------------------------------------------------------
+   Design goals:
+   • Neon green accent with subtle glow
+   • Deep black/charcoal surfaces
+   • Premium glassy cards + crisp borders
+   • Smooth motion, tight spacing, high contrast (AA+)
+   ========================================================= */
+
+:root{
+  --bg: #090b0a;
+  --bg-2:#0c0f0d;
+  --surface:#0f1411;
+  --surface-2:#131a16;
+  --text:#e8f5ee;
+  --muted:#b8c7bf;
+  --border: rgba(110, 255, 190, 0.18);
+  --border-strong: rgba(0,255,160,0.35);
+  --accent:#00ffa0;
+  --accent-2:#00e185;
+  --accent-3:#5bffd1;
+  --danger:#ef4444;
+  --shadow: 0 10px 30px rgba(0,0,0,.55);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-lg: 22px;
+  --ring: 0 0 0 2px rgba(0,255,160,.25), 0 0 25px rgba(0,255,160,.15) inset;
+}
+
+/* Light mode fallback (if your page starts light and toggles .dark-mode) */
+html:not(.dark-mode) body{
+  --bg:#0a0e0c; --bg-2:#0e1311; --surface:#121915; --surface-2:#18221c;
+  --text:#f0fff8; --muted:#cce9dd; --border:rgba(110,255,190,.20);
+}
+
+/* ============ Page Background ============ */
+html, body{
+  background: radial-gradient(1200px 700px at 80% -10%, rgba(0,255,160,.12), transparent 55%),
+              radial-gradient(900px 600px at -10% 110%, rgba(0,255,160,.08), transparent 50%),
+              linear-gradient(180deg, var(--bg), var(--bg-2) 70%);
+  color: var(--text);
+  accent-color: var(--accent);
+}
+
+/* Subtle animated grid for a premium look */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+  background:
+    linear-gradient(transparent 95%, rgba(0,255,160,.08) 100%) 0 0/100% 26px,
+    linear-gradient(90deg, transparent 95%, rgba(0,255,160,.08) 100%) 0 0/26px 100%;
+  opacity:.20;
+  mask: radial-gradient(900px 650px at 65% -10%, #000 45%, transparent 70%);
+}
+
+/* ============ Header / Footer ============ */
+header, footer{
+  background: linear-gradient(180deg, #0b0f0c, #0e1411);
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+header{
+  position:sticky; top:0; z-index:50;
+  padding: 18px 22px !important;
+  font-weight: 800 !important;
+  letter-spacing:.2px;
+  display:flex; align-items:center; justify-content:center;
+  text-transform: lowercase;
+}
+header::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+  background: radial-gradient(30% 200% at 50% 200%, rgba(0,255,160,.85), transparent 70%);
+  filter: blur(1px); opacity:.75;
+}
+footer{
+  gap:14px;
+  border-top: 1px solid var(--border);
+  border-bottom:none;
+}
+
+/* Developer credit styling inside footer */
+footer span[style*="Developed"]{
+  color: var(--accent) !important;
+  text-shadow: 0 0 18px rgba(0,255,160,.35);
+}
+
+/* ============ Cards ============ */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.02) inset !important;
+  backdrop-filter: blur(6px);
+  color: var(--text) !important;
+  transform: translateZ(0);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover{
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 8px 40px rgba(0,255,160,.10), var(--shadow) !important;
+}
+.card span[contenteditable]{
+  padding-right: 4px;
+  border-radius: 8px;
+}
+.card span[contenteditable]:focus{
+  box-shadow: var(--ring);
+  outline: none;
+}
+
+/* ============ Buttons ============ */
+button, .btn, .copy-btn, .delete-btn, .toggle-btn{
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+  color: #04140e !important;
+  font-weight: 800;
+  letter-spacing:.2px;
+  padding: 10px 14px !important;
+  box-shadow: 0 8px 26px rgba(0,255,160,.26), 0 0 0 1px rgba(0,255,160,.25) inset;
+  transition: transform .15s ease, box-shadow .25s ease, filter .25s ease;
+}
+button:hover, .btn:hover, .copy-btn:hover, .toggle-btn:hover{
+  transform: translateY(-2px);
+  filter: saturate(110%);
+  box-shadow: 0 12px 38px rgba(0,255,160,.33), 0 0 0 1px rgba(0,255,160,.35) inset;
+}
+button:active{ transform: translateY(0) scale(.99); }
+
+/* Secondary & Danger variants */
+.copy-btn{}
+.delete-btn{
+  background: linear-gradient(180deg, #ff5d5d, #ef4444) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 26px rgba(239,68,68,.28), 0 0 0 1px rgba(239,68,68,.35) inset !important;
+}
+
+/* top-right dark-mode toggle button */
+button[onclick^="toggleDarkMode"]{
+  padding:8px 10px !important; border-radius: 10px !important;
+  background: linear-gradient(180deg, #111, #0d0d0d) !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,.45), 0 0 0 1px rgba(0,255,160,.15) inset !important;
+}
+
+/* ============ Inputs / Textareas ============ */
+input, textarea, select{
+  background: linear-gradient(180deg, #0e1411, #0c1210) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.03) inset;
+  transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+input::placeholder, textarea::placeholder{ color: color-mix(in oklab, var(--muted) 85%, #fff 0%); }
+input:focus, textarea:focus, select:focus{
+  outline: none;
+  border-color: var(--border-strong) !important;
+  box-shadow: var(--ring);
+}
+
+/* search bars */
+#productSearchInput, #globalSearch, #warrantyInput{
+  background: linear-gradient(180deg, #0e1512, #0b1210) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* ============ Admin bar (sticky) ============ */
+#adminBar{
+  background: rgba(9, 14, 12, .7) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 80;
+  color: var(--muted) !important;
+}
+#authStatus{ color: var(--muted) !important; }
+#changePassBtn, #logoutBtn{ margin-inline-start: 8px !important; }
+
+/* ============ Script Items ============ */
+.script-item{
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) !important;
+  border: 1px solid var(--border) !important;
+  border-left: 3px solid var(--accent) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.02) inset !important;
+  gap: 8px !important; padding: 10px 12px !important;
+}
+.script-item pre{
+  color: var(--text) !important;
+  font-size: 0.98rem !important;
+}
+.script-item textarea{
+  min-height: 90px;
+}
+
+/* Expand-on-hover already present; we keep the smoothness */
+.script-item:hover{ border-color: var(--border-strong) !important; }
+
+/* ============ Chips ============ */
+.chips{ gap:.5rem !important; }
+.prop-chip{
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) !important;
+  border-radius: 999px !important;
+  padding:.5rem .8rem !important;
+  transition: transform .12s ease, background .25s ease, border-color .25s ease;
+}
+.prop-chip:hover{
+  transform: translateY(-1px);
+  border-color: var(--border-strong) !important;
+  background: linear-gradient(180deg, rgba(0,255,160,.18), rgba(0,255,160,.10)) !important;
+}
+
+/* ============ Tables ============ */
+table{
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text);
+  border-radius: var(--radius) !important;
+  overflow:hidden;
+}
+thead{
+  background: linear-gradient(180deg, rgba(0,255,160,.18), rgba(0,255,160,.10)) !important;
+  color: #052118 !important;
+}
+th, td{
+  border-color: rgba(255,255,255,.06) !important;
+}
+tbody tr:hover{
+  background: rgba(0,255,160,.06) !important;
+}
+
+/* ============ Toast ============ */
+#toast{
+  background: linear-gradient(180deg, #0e1411, #0a100e) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  box-shadow: var(--shadow), 0 0 0 1px rgba(0,255,160,.18) inset !important;
+}
+
+/* ============ Product details result ============ */
+#productDetailsResult, #warrantyResult{
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+}
+
+/* ============ Smart suggestions ============ */
+.smart-card{
+  background: linear-gradient(180deg, rgba(0,255,160,.14), rgba(0,255,160,.10)) !important;
+  border: 1px solid var(--border-strong) !important;
+  color:#062419 !important;
+}
+
+/* ============ Hover shine for primary buttons ============ */
+button, .btn, .copy-btn{
+  position: relative; overflow: hidden;
+}
+button::after, .btn::after, .copy-btn::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(110deg, rgba(255,255,255,.0) 0%, rgba(255,255,255,.25) 45%, rgba(255,255,255,.0) 60%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .55s ease;
+}
+button:hover::after, .btn:hover::after, .copy-btn:hover::after{
+  transform: translateX(120%) skewX(-12deg);
+}
+
+/* ============ Fine‑tuning ============ */
+#productSearchSection{ gap:12px !important; }
+main{ padding: 24px !important; max-width: 1200px; margin:auto; }
+.grid{ gap: 18px !important; }
+
+/* Ensure contrast for inline small buttons */
+button[onclick^="alert"]{
+  background: #0f1411 !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+
+/* ===== Ultra Glow Add-on (stronger neon) ===== */
+
+/* =========================================================
+   ✦ ULTRA GLOW — add-on for Neo Green + Black Pro Theme ✦
+   Place this file AFTER the base theme (neo_green_black_theme.css).
+   Design: stronger neon, deeper shadows, brighter focus rings.
+   No JS changes. Pure CSS overrides.
+   ========================================================= */
+
+:root{
+  --glow-outer: 0 18px 80px rgba(0,255,160,.30), 0 0 0 1px rgba(0,255,160,.35) inset;
+  --glow-inner: 0 0 0 2px rgba(0,255,160,.35), 0 0 70px rgba(0,255,160,.22) inset;
+  --glow-ring: 0 0 0 2px rgba(0,255,160,.38), 0 0 34px rgba(0,255,160,.25) inset;
+}
+
+/* Global radiant haze */
+body::after{
+  content:""; position:fixed; inset:-10% -10% -20% -10%;
+  z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 75% -5%, rgba(0,255,160,.18), transparent 55%),
+    radial-gradient(700px 520px at 5% 105%, rgba(0,255,160,.14), transparent 52%);
+  filter: blur(18px);
+  opacity:.9;
+}
+
+/* Header glow animation */
+@keyframes headerShimmer { 
+  0%{ transform: translateX(-40%); opacity:.0; } 
+  40%{ opacity:.85; } 
+  100%{ transform: translateX(140%); opacity:0; } 
+}
+header{
+  box-shadow: 0 8px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+header::before{
+  content:""; position:absolute; left:-30%; right:-30%; top:0; height:100%;
+  background: linear-gradient(110deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.20) 50%, rgba(255,255,255,0) 70%);
+  transform: translateX(-40%) skewX(-10deg);
+  filter: blur(1px);
+  animation: headerShimmer 4.2s ease-in-out infinite;
+  mix-blend-mode: overlay; pointer-events:none;
+}
+
+/* Cards — richer depth & edge neon */
+.card{
+  border-color: rgba(0,255,160,.38) !important;
+  box-shadow: 0 16px 60px rgba(0,255,160,.18), 0 10px 38px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.03) inset !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)) !important;
+}
+.card:hover{
+  transform: translateY(-10px) scale(1.035);
+  border-color: rgba(0,255,160,.6) !important;
+  box-shadow: 0 26px 120px rgba(0,255,160,.28), 0 16px 50px rgba(0,0,0,.65) !important;
+}
+
+/* Script items — illuminated spine */
+.script-item{
+  border-left: 4px solid var(--accent) !important;
+  box-shadow: 0 10px 38px rgba(0,255,160,.12), 0 0 0 1px rgba(255,255,255,.03) inset !important;
+}
+.script-item:hover{
+  border-color: rgba(0,255,160,.65) !important;
+  box-shadow: 0 18px 70px rgba(0,255,160,.2), 0 0 0 1px rgba(255,255,255,.04) inset !important;
+}
+
+/* Buttons — neon surge */
+button, .btn, .copy-btn{
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+  box-shadow: 0 16px 48px rgba(0,255,160,.35), 0 0 0 1px rgba(0,255,160,.35) inset;
+}
+button:hover, .btn:hover, .copy-btn:hover{
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 22px 80px rgba(0,255,160,.45), 0 0 0 1px rgba(0,255,160,.45) inset;
+}
+button:active, .btn:active{ transform: translateY(0) scale(.995); }
+
+/* Dark-mode toggle — persistent neon */
+button[onclick^="toggleDarkMode"]{
+  position: fixed !important; top: 14px; right: 14px; z-index: 9999;
+  background: linear-gradient(180deg, #111, #0d0d0d) !important;
+  color: var(--accent) !important;
+  border: 1px solid rgba(0,255,160,.35) !important;
+  box-shadow: 0 10px 28px rgba(0,255,160,.22), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+}
+
+/* Inputs — bright focus rings */
+input, textarea, select{
+  border: 1px solid rgba(0,255,160,.26) !important;
+  background: linear-gradient(180deg, #0f1714, #0b1310) !important;
+}
+input:focus, textarea:focus, select:focus{
+  box-shadow: var(--glow-ring) !important;
+  border-color: rgba(0,255,160,.55) !important;
+}
+
+/* Chips — halo on hover */
+.prop-chip{
+  border-color: rgba(0,255,160,.30) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
+}
+.prop-chip:hover{
+  background: linear-gradient(180deg, rgba(0,255,160,.28), rgba(0,255,160,.14)) !important;
+  box-shadow: 0 10px 34px rgba(0,255,160,.28) !important;
+}
+
+/* Tables — luminous header and hover */
+thead{
+  background: linear-gradient(180deg, rgba(0,255,160,.28), rgba(0,255,160,.16)) !important;
+  box-shadow: inset 0 -1px 0 rgba(0,255,160,.35);
+}
+tbody tr:hover{
+  background: rgba(0,255,160,.10) !important;
+}
+
+/* Toast / Notifications */
+#toast{
+  border-color: rgba(0,255,160,.45) !important;
+  box-shadow: 0 12px 46px rgba(0,255,160,.25), 0 0 0 1px rgba(0,255,160,.28) inset !important;
+}
+
+/* Links — subtle neon underline on hover */
+a{
+  text-decoration: none; border-bottom: 1px dashed transparent;
+  transition: border-color .2s ease, color .2s ease;
+}
+a:hover{ color: var(--accent); border-bottom-color: rgba(0,255,160,.45); }
+
+/* Scrollbar (WebKit) — thin neon accent */
+*::-webkit-scrollbar{ height: 10px; width: 10px; }
+*::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, rgba(0,255,160,.65), rgba(0,255,160,.35));
+  border-radius: 10px; border: 2px solid rgba(0,0,0,.5);
+  box-shadow: 0 6px 20px rgba(0,255,160,.3) inset;
+}
+*::-webkit-scrollbar-track{ background:#0a0f0d; }
+
+/* Selection highlight */
+::selection{
+  background: rgba(0,255,160,.35); color: #03150f;
+}
+
+</style>
+
+<style>
+/* ===== Post-merge tweaks (requested) ===== */
+/* 1) Footer color harmonized with Neo Green theme */
+footer{
+  background: linear-gradient(180deg, #0b0f0c, #0f1411) !important;
+  color: var(--text) !important;
+  border-top: 1px solid var(--border) !important;
+  box-shadow: 0 -8px 30px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02) inset !important;
+}
+footer::after{
+  content:""; position:absolute; left:0; right:0; top:0; height:2px;
+  background: radial-gradient(30% 200% at 50% -80%, rgba(0,255,160,.75), transparent 70%);
+  filter: blur(0.5px); opacity:.6; pointer-events:none;
+}
+
+/* 2) Footer logo gets card-like glow on hover */
+footer img[alt="Logo"]{
+  border-radius: 12px !important;
+  transition: transform .18s ease, box-shadow .35s ease, filter .25s ease;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+footer img[alt="Logo"]:hover{
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 16px 60px rgba(0,255,160,.22), 0 0 0 1px rgba(0,255,160,.35) inset;
+  filter: saturate(110%);
+}
+
+/* 3) Safety: prevent accidental emoji scaling in cards */
+.card span[contenteditable]{ white-space: nowrap; }
+
+</style>
+
+<style>
+/* ===== Footer: logo hover scale + caption, and dev credit color ===== */
+footer{ position: relative; }
+footer .logo-wrap{
+  display: inline-flex; flex-direction: column; align-items: center; justify-content:center; gap: 6px;
+}
+footer .logo-wrap img{
+  height: 40px; border-radius: 12px;
+  transition: transform .25s ease, box-shadow .35s ease, filter .25s ease;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+footer .logo-wrap:hover img{
+  transform: translateY(-2px) scale(1.10);
+  box-shadow: 0 18px 70px rgba(0,255,160,.24), 0 0 0 1px rgba(0,255,160,.38) inset;
+  filter: saturate(110%);
+}
+footer .logo-caption{
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  letter-spacing: .2px;
+  opacity: .9;
+  transition: color .2s ease, opacity .2s ease, text-shadow .25s ease;
+}
+footer .logo-wrap:hover .logo-caption{
+  color: var(--accent);
+  opacity: 1;
+  text-shadow: 0 0 12px rgba(0,255,160,.22);
+}
+
+/* Dev credit color harmonized */
+footer .dev-credit{
+  color: var(--accent) !important;
+  text-shadow: 0 0 14px rgba(0,255,160,.22);
+  font-weight: 700;
+}
+
+</style>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+/* =========================================================
+   PERF-LITE Overrides (fast, still neon)
+   - Disables heavy blurs/animations
+   - Simplifies shadows & gradients
+   - Keeps neon accent but with lower GPU cost
+   ========================================================= */
+html.perf-lite body::before,
+html.perf-lite body::after{ display:none !important; }
+
+html.perf-lite header::before{ display:none !important; animation:none !important; }
+html.perf-lite header{ box-shadow: 0 6px 16px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02) inset !important; }
+
+html.perf-lite #adminBar{
+  backdrop-filter: none !important;
+  background: #0a100e !important;
+}
+
+html.perf-lite .card{
+  backdrop-filter: none !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.01)) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.02) inset !important;
+  transform: none !important;
+}
+html.perf-lite .card:hover{
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 36px rgba(0,0,0,.55), 0 0 0 1px rgba(0,255,160,.28) inset !important;
+}
+
+html.perf-lite .script-item{
+  box-shadow: 0 8px 20px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02) inset !important;
+}
+html.perf-lite .script-item:hover{
+  box-shadow: 0 12px 28px rgba(0,0,0,.55), 0 0 0 1px rgba(0,255,160,.28) inset !important;
+}
+
+html.perf-lite button, 
+html.perf-lite .btn, 
+html.perf-lite .copy-btn{
+  box-shadow: 0 8px 24px rgba(0,255,160,.22), 0 0 0 1px rgba(0,255,160,.28) inset !important;
+}
+html.perf-lite button:hover, 
+html.perf-lite .btn:hover, 
+html.perf-lite .copy-btn:hover{
+  box-shadow: 0 12px 30px rgba(0,255,160,.28), 0 0 0 1px rgba(0,255,160,.35) inset !important;
+}
+
+/* Reduce transitions for smoother feel on modest machines */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+html.perf-lite *{ transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease; }
+
+/* Tables and chips simplified */
+html.perf-lite thead{
+  background: linear-gradient(180deg, rgba(0,255,160,.20), rgba(0,255,160,.12)) !important;
+  box-shadow: none !important;
+}
+html.perf-lite tbody tr:hover{ background: rgba(0,255,160,.06) !important; }
+
+html.perf-lite .prop-chip{
+  box-shadow: none !important;
+}
+html.perf-lite .prop-chip:hover{
+  box-shadow: 0 8px 18px rgba(0,0,0,.35) !important;
+}
+
+/* Footer simplification remains pretty */
+html.perf-lite footer::after{ opacity:.5 !important; filter:none !important; }
+html.perf-lite footer .logo-wrap:hover img{
+  transform: translateY(-1px) scale(1.06) !important;
+  box-shadow: 0 12px 36px rgba(0,255,160,.20), 0 0 0 1px rgba(0,255,160,.30) inset !important;
+}
+
+</style>
+
+<style>
+/* =========================================================
+   Day Theme (Light) — Neo Green Primary + Fresh Light Neutrals
+   - Green remains the primary accent
+   - Clean, bright surfaces with subtle shadows
+   - Matches the dark theme structure; design-only
+   ========================================================= */
+
+:root{
+  /* keep accent family consistent across modes */
+  --accent: #00b97a;
+  --accent-2:#00a86b;
+  --accent-3:#3dd6a0;
+}
+
+/* When NOT in dark-mode (default = light) */
+html:not(.dark-mode), 
+html:not(.dark-mode) body{
+  --bg: #f6faf8;
+  --bg-2:#f2f7f5;
+  --surface:#ffffff;
+  --surface-2:#fafefd;
+  --text:#0c1b15;
+  --muted:#5e726a;
+  --border: rgba(0,168,120,.18);
+  --border-strong: rgba(0,168,120,.32);
+  --shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+/* Backgrounds */
+html:not(.dark-mode) body{
+  background:
+    radial-gradient(1200px 700px at 80% -10%, rgba(0,185,122,.10), transparent 55%),
+    radial-gradient(900px 600px at -10% 110%, rgba(0,185,122,.06), transparent 50%),
+    linear-gradient(180deg, var(--bg), var(--bg-2) 70%);
+  color: var(--text);
+}
+
+/* Subtle grid (lighter) */
+html:not(.dark-mode) body::before{
+  background:
+    linear-gradient(transparent 95%, rgba(0,185,122,.06) 100%) 0 0/100% 26px,
+    linear-gradient(90deg, transparent 95%, rgba(0,185,122,.06) 100%) 0 0/26px 100%;
+  opacity:.18;
+  mask: radial-gradient(900px 650px at 65% -10%, #000 45%, transparent 70%);
+}
+
+/* Header / Footer */
+html:not(.dark-mode) header,
+html:not(.dark-mode) footer{
+  background: linear-gradient(180deg, #ffffff, #f7fbf9);
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.65) inset;
+}
+html:not(.dark-mode) header::after{
+  background: radial-gradient(30% 200% at 50% 200%, rgba(0,185,122,.65), transparent 70%);
+  opacity:.55;
+}
+html:not(.dark-mode) footer{
+  border-top: 1px solid var(--border) !important;
+}
+html:not(.dark-mode) footer::after{
+  background: radial-gradient(30% 200% at 50% -80%, rgba(0,185,122,.55), transparent 70%);
+  opacity:.45;
+}
+
+/* Cards */
+html:not(.dark-mode) .card{
+  background: linear-gradient(180deg, #ffffff, #fbfefd) !important;
+  border: 1px solid rgba(0,0,0,.04) !important;
+  box-shadow: var(--shadow), 0 0 0 1px rgba(0,0,0,.02) inset !important;
+  color: var(--text) !important;
+}
+html:not(.dark-mode) .card:hover{
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 14px 35px rgba(0,0,0,.10), 0 0 0 1px rgba(0,185,122,.22) inset !important;
+}
+
+/* Buttons */
+html:not(.dark-mode) button,
+html:not(.dark-mode) .btn,
+html:not(.dark-mode) .copy-btn,
+html:not(.dark-mode) .delete-btn{
+  border: 1px solid rgba(0,0,0,.04) !important;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(0,185,122,.22), 0 0 0 1px rgba(0,185,122,.28) inset !important;
+}
+html:not(.dark-mode) button:hover,
+html:not(.dark-mode) .btn:hover,
+html:not(.dark-mode) .copy-btn:hover{
+  box-shadow: 0 12px 34px rgba(0,185,122,.28), 0 0 0 1px rgba(0,185,122,.35) inset !important;
+}
+
+/* Dark-mode toggle appearance in light */
+html:not(.dark-mode) button[onclick^="toggleDarkMode"]{
+  background: linear-gradient(180deg, #f4faf7, #edf6f2) !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08), 0 0 0 1px rgba(0,185,122,.18) inset !important;
+}
+
+/* Inputs */
+html:not(.dark-mode) input,
+html:not(.dark-mode) textarea,
+html:not(.dark-mode) select{
+  background: #ffffff !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02) inset;
+}
+html:not(.dark-mode) input:focus,
+html:not(.dark-mode) textarea:focus,
+html:not(.dark-mode) select:focus{
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 0 0 2px rgba(0,185,122,.20), 0 0 18px rgba(0,185,122,.12) inset !important;
+}
+
+/* Script items */
+html:not(.dark-mode) .script-item{
+  background: linear-gradient(180deg, #ffffff, #fbfefd) !important;
+  border-left: 3px solid var(--accent) !important;
+  box-shadow: var(--shadow), 0 0 0 1px rgba(0,0,0,.02) inset !important;
+}
+html:not(.dark-mode) .script-item pre{ color: var(--text) !important; }
+
+/* Chips */
+html:not(.dark-mode) .prop-chip{
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  color: var(--text) !important;
+}
+html:not(.dark-mode) .prop-chip:hover{
+  background: linear-gradient(180deg, rgba(0,185,122,.12), rgba(0,185,122,.06)) !important;
+  border-color: var(--border-strong) !important;
+}
+
+/* Tables */
+html:not(.dark-mode) table{
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+  color: var(--text) !important;
+}
+html:not(.dark-mode) thead{
+  background: linear-gradient(180deg, rgba(0,185,122,.16), rgba(0,185,122,.10)) !important;
+  color: #063f2c !important;
+}
+html:not(.dark-mode) tbody tr:hover{ background: rgba(0,185,122,.06) !important; }
+
+/* Toast */
+html:not(.dark-mode) #toast{
+  background: #ffffff !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.08), 0 0 0 1px rgba(0,185,122,.16) inset !important;
+}
+
+/* Footer logo hover keeps a lighter touch */
+html:not(.dark-mode) footer .logo-wrap:hover img{
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 14px 40px rgba(0,185,122,.20), 0 0 0 1px rgba(0,185,122,.30) inset;
+}
+
+/* Perf-lite compatible */
+html.perf-lite:not(.dark-mode) .card{ transform:none !important; }
+
+</style>
+
+<style>
+/* ===== Unified Light/Dark + Toggle hover glow on cards ===== */
+
+/* Subtle luminance pulse for all cards when toggle hovered */
+@keyframes cardGlowPulse {
+  0%   { box-shadow: 0 8px 24px rgba(0,0,0,.06), 0 0 0 1px rgba(0,255,160,.16) inset; }
+  50%  { box-shadow: 0 16px 40px rgba(0,255,160,.18), 0 0 0 1px rgba(0,255,160,.35) inset; }
+  100% { box-shadow: 0 8px 24px rgba(0,0,0,.06), 0 0 0 1px rgba(0,255,160,.16) inset; }
+}
+.cards-glow .card{
+  animation: cardGlowPulse .9s ease-in-out both;
+}
+/* Dark theme variant of the same pulse */
+.dark-mode.cards-glow .card{
+  animation: cardGlowPulseDark .9s ease-in-out both;
+}
+@keyframes cardGlowPulseDark {
+  0%   { box-shadow: 0 10px 28px rgba(0,0,0,.5), 0 0 0 1px rgba(0,255,160,.18) inset; }
+  50%  { box-shadow: 0 22px 70px rgba(0,255,160,.28), 0 0 0 1px rgba(0,255,160,.42) inset; }
+  100% { box-shadow: 0 10px 28px rgba(0,0,0,.5), 0 0 0 1px rgba(0,255,160,.18) inset; }
+}
+
+/* Light theme: ensure no black-heavy elements */
+html:not(.dark-mode) .card,
+html:not(.dark-mode) .script-item,
+html:not(.dark-mode) table,
+html:not(.dark-mode) #toast{
+  border-color: rgba(0,0,0,.06) !important;
+}
+
+/* Toggle button hover style (visual shine) */
+button[onclick^="toggleDarkMode"],
+button[onclick^="toggleTheme"]{
+  position: fixed !important;
+  top: 14px; right: 14px; z-index: 9999;
+}
+button[onclick^="toggleDarkMode"]:hover,
+button[onclick^="toggleTheme"]:hover{
+  filter: saturate(115%);
+  box-shadow: 0 14px 40px rgba(0,185,122,.35), 0 0 0 1px rgba(0,185,122,.35) inset !important;
+}
+
+</style>
+<style>
+/* === Card glow fix: static glow on toggle hover (no animation) === */
+:root.cards-glow .card{
+  box-shadow: 0 16px 40px rgba(0,255,160,.22), 0 0 0 1px rgba(0,255,160,.35) inset, 0 10px 26px rgba(0,0,0,.35) !important;
+}
+:root.dark-mode.cards-glow .card{
+  box-shadow: 0 22px 70px rgba(0,255,160,.28), 0 0 0 1px rgba(0,255,160,.42) inset, 0 14px 40px rgba(0,0,0,.55) !important;
+}
+</style>
+<style>
+/* === Script items harmonized with cards === */
+html.dark-mode .script-item{
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) !important;
+  border: 1px solid var(--border) !important;
+  border-left: 3px solid var(--accent) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.02) inset !important;
+  color: var(--text) !important;
+}
+html:not(.dark-mode) .script-item{
+  background: linear-gradient(180deg, #ffffff, #fbfefd) !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+  border-left: 3px solid var(--accent) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.02) inset !important;
+  color: var(--text) !important;
+}
+html:not(.dark-mode) .script-item:hover{
+  box-shadow: 0 14px 34px rgba(0,0,0,.10), 0 0 0 1px rgba(0,185,122,.22) inset !important;
+}
+/* Ensure pre text contrasts well */
+.script-item pre{ color: var(--text) !important; }
+</style>
+
+<style>
+/* ===================== Final Touches (UX + A11y + Perf) ===================== */
+
+/* 1) Focus-visible rings: crisp and consistent */
+*:focus { outline: none; }
+*:focus-visible{
+  box-shadow: 0 0 0 2px rgba(0,185,122,.35), 0 0 0 4px rgba(0,185,122,.18) !important;
+  border-color: var(--border-strong) !important;
+}
+
+/* 2) Caret & placeholders */
+input, textarea{ caret-color: var(--accent); }
+html:not(.dark-mode) input::placeholder, html:not(.dark-mode) textarea::placeholder{ color: #7b938a; }
+html.dark-mode input::placeholder, html.dark-mode textarea::placeholder{ color: #9fb6ad; }
+
+/* 3) Links: subtle underline on hover */
+a{ color: inherit; border-bottom: 1px dashed transparent; text-decoration: none; transition: color .2s ease, border-color .2s ease; }
+a:hover{ color: var(--accent); border-bottom-color: rgba(0,185,122,.35); }
+
+/* 4) Cards perf-safe transforms */
+.card{ will-change: transform, box-shadow; backface-visibility: hidden; transform: translateZ(0); }
+.prop-chip{ will-change: transform, box-shadow; }
+
+/* 5) Consistent script-item inner spacing */
+.script-item{ padding: 10px 12px !important; }
+.script-item pre{ margin: 0; line-height: 1.55; }
+
+/* 6) Chips "active" visual (optional, if used) */
+.prop-chip.active, .prop-chip[aria-pressed="true"]{
+  background: linear-gradient(180deg, rgba(0,185,122,.22), rgba(0,185,122,.12)) !important;
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 8px 24px rgba(0,185,122,.18) !important;
+}
+html.dark-mode .prop-chip.active, html.dark-mode .prop-chip[aria-pressed="true"]{
+  background: linear-gradient(180deg, rgba(0,255,160,.20), rgba(0,255,160,.12)) !important;
+  box-shadow: 0 10px 28px rgba(0,255,160,.22) !important;
+}
+
+/* 7) Toggle button focus */
+button[onclick^="toggleDarkMode"], button[onclick^="toggleTheme"]{
+  outline: none;
+}
+button[onclick^="toggleDarkMode"]:focus-visible, button[onclick^="toggleTheme"]:focus-visible{
+  box-shadow: 0 0 0 2px rgba(0,185,122,.35), 0 0 0 4px rgba(0,185,122,.18) !important;
+}
+
+</style>
+<style>
+/* === Prevent long titles from overflowing cards === */
+.card{ min-width: 0; } /* allow flex children to shrink */
+.card span[contenteditable]{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;   /* show up to 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;      /* allow wrapping */
+  max-width: 100%;
+  line-height: 1.35;
+}
+
+/* Also apply to any card titles mirrored in the side list */
+#cardList div{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  max-width: 100%;
+}
+
+/* Ensure grid containers don't push content out */
+.grid, #mainGrid{ min-width: 0; }
+</style>
+<style>
+/* === Harmonize Search & Login buttons with neon green theme === */
+button[onclick="searchProductDetails()"],
+button[onclick="checkPassword()"]{
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+  color: #04140e !important;
+  font-weight: 800 !important;
+  letter-spacing:.2px !important;
+  padding: 10px 14px !important;
+  box-shadow: 0 8px 26px rgba(0,255,160,.26), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+  transition: transform .15s ease, box-shadow .25s ease, filter .25s ease !important;
+}
+button[onclick="searchProductDetails()"]:hover,
+button[onclick="checkPassword()"]:hover{
+  transform: translateY(-2px) !important;
+  filter: saturate(110%) !important;
+  box-shadow: 0 12px 38px rgba(0,255,160,.33), 0 0 0 1px rgba(0,255,160,.35) inset !important;
+}
+button[onclick="searchProductDetails()"]::after,
+button[onclick="checkPassword()"]::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(110deg, rgba(255,255,255,.0) 0%, rgba(255,255,255,.25) 45%, rgba(255,255,255,.0) 60%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .55s ease;
+}
+button[onclick="searchProductDetails()"]:hover::after,
+button[onclick="checkPassword()"]:hover::after{
+  transform: translateX(120%) skewX(-12deg);
+}
+</style>
+<style>
+/* === Back button (theme-consistent) === */
+.btn-back,
+button#back, button#goBack, button[data-role="back"],
+button[onclick*="history.back"], a[href^="javascript:history.back"]{
+  position: relative;
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border) !important;
+  background: linear-gradient(180deg, #0f1411, #0b1210) !important;
+  color: var(--accent) !important;
+  font-weight: 800 !important;
+  letter-spacing:.2px !important;
+  padding: 10px 14px !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.45), 0 0 0 1px rgba(0,255,160,.15) inset !important;
+  transition: transform .15s ease, box-shadow .25s ease, filter .25s ease !important;
+  text-decoration: none !important;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-back:hover,
+button#back:hover, button#goBack:hover, button[data-role="back"]:hover,
+button[onclick*="history.back"]:hover, a[href^="javascript:history.back"]:hover{
+  transform: translateY(-2px);
+  filter: saturate(110%);
+  box-shadow: 0 12px 34px rgba(0,255,160,.22), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+}
+/* Optional back arrow adornment */
+.btn-back::before,
+button#back::before, button#goBack::before, button[data-role="back"]::before,
+button[onclick*="history.back"]::before, a[href^="javascript:history.back"]::before{
+  content: "↩";
+  font-weight: 700;
+  opacity: .9;
+}
+
+/* === Card hover shine (restored, perf-friendly) === */
+.card{ position: relative; overflow: hidden; }
+.card::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(110deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.14) 45%, rgba(255,255,255,0) 60%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .6s ease;
+}
+.card:hover::after{
+  transform: translateX(120%) skewX(-12deg);
+}
+.card:hover{
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 18px 60px rgba(0,255,160,.18), 0 0 0 1px rgba(0,255,160,.28) inset, 0 10px 30px rgba(0,0,0,.5) !important;
+}
+</style>
+<style>
+/* === Back button — Primary Neon Green (harmonized) === */
+.btn-back,
+button#back, button#goBack, button[data-role="back"],
+button[onclick*="history.back"], a[href^="javascript:history.back"]{
+  position: relative;
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+  color: #04140e !important;
+  font-weight: 800 !important;
+  letter-spacing:.2px !important;
+  padding: 10px 14px !important;
+  box-shadow: 0 8px 26px rgba(0,255,160,.26), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+  transition: transform .15s ease, box-shadow .25s ease, filter .25s ease !important;
+  text-decoration: none !important;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-back:hover,
+button#back:hover, button#goBack:hover, button[data-role="back"]:hover,
+button[onclick*="history.back"]:hover, a[href^="javascript:history.back"]:hover{
+  transform: translateY(-2px);
+  filter: saturate(110%);
+  box-shadow: 0 12px 38px rgba(0,255,160,.33), 0 0 0 1px rgba(0,255,160,.35) inset !important;
+}
+/* Arrow before icon harmonized with primary button text color */
+.btn-back::before,
+button#back::before, button#goBack::before, button[data-role="back"]::before,
+button[onclick*="history.back"]::before, a[href^="javascript:history.back"]::before{
+  content: "↩";
+  font-weight: 700;
+  opacity: .85;
+  color: #04140e;
+}
+</style>
+<style>
+/* === Global Button Override: remove any blue, unify to neon green (like Search/Login) === */
+button, .btn, .copy-btn, .delete-btn, .toggle-btn,
+input[type="button"], input[type="submit"], a.button, [role="button"]{
+  position: relative;
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+  color: #04140e !important;
+  font-weight: 800 !important;
+  letter-spacing: .2px !important;
+  padding: 10px 14px !important;
+  box-shadow: 0 8px 26px rgba(0,255,160,.26), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+  transition: transform .15s ease, box-shadow .25s ease, filter .25s ease !important;
+  text-decoration: none !important;
+}
+
+button:hover, .btn:hover, .copy-btn:hover, .delete-btn:hover, .toggle-btn:hover,
+input[type="button"]:hover, input[type="submit"]:hover, a.button:hover, [role="button"]:hover{
+  transform: translateY(-2px) !important;
+  filter: saturate(110%) !important;
+  box-shadow: 0 12px 38px rgba(0,255,160,.33), 0 0 0 1px rgba(0,255,160,.35) inset !important;
+}
+
+/* Shine sweep on hover for all buttons */
+button::after, .btn::after, .copy-btn::after, .delete-btn::after, .toggle-btn::after,
+input[type="button"]::after, input[type="submit"]::after, a.button::after, [role="button"]::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(110deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.25) 45%, rgba(255,255,255,0) 60%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .55s ease;
+}
+button:hover::after, .btn:hover::after, .copy-btn:hover::after, .delete-btn:hover::after, .toggle-btn:hover::after,
+input[type="button"]:hover::after, input[type="submit"]:hover::after, a.button:hover::after, [role="button"]:hover::after{
+  transform: translateX(120%) skewX(-12deg);
+}
+
+/* Safety: neutralize any legacy hard-coded blues */
+button, .btn, .copy-btn, .delete-btn, .toggle-btn{
+  background-color: transparent !important; /* ensure gradient wins */
+}
+</style>
+<style>
+/* === Admin buttons: remove legacy blue/teal and unify to neon green === */
+
+/* Reset legacy .admin-only background that affected non-button containers */
+.admin-only{
+  background: initial !important;
+  background-color: initial !important;
+  color: inherit !important;
+}
+
+/* Explicitly style admin buttons */
+#adminBar button,
+button.admin-only,
+.admin-only button,
+#changePassBtn, #logoutBtn{
+  position: relative;
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+  color: #04140e !important;
+  font-weight: 800 !important;
+  letter-spacing: .2px !important;
+  padding: 10px 14px !important;
+  box-shadow: 0 8px 26px rgba(0,255,160,.26), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+  transition: transform .15s ease, box-shadow .25s ease, filter .25s ease !important;
+  text-decoration: none !important;
+}
+#adminBar button:hover,
+button.admin-only:hover,
+.admin-only button:hover,
+#changePassBtn:hover, #logoutBtn:hover{
+  transform: translateY(-2px) !important;
+  filter: saturate(110%) !important;
+  box-shadow: 0 12px 38px rgba(0,255,160,.33), 0 0 0 1px rgba(0,255,160,.35) inset !important;
+}
+
+/* Shine sweep for admin buttons */
+#adminBar button::after,
+button.admin-only::after,
+.admin-only button::after,
+#changePassBtn::after, #logoutBtn::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(110deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.25) 45%, rgba(255,255,255,0) 60%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .55s ease;
+}
+#adminBar button:hover::after,
+button.admin-only:hover::after,
+.admin-only button:hover::after,
+#changePassBtn:hover::after, #logoutBtn:hover::after{
+  transform: translateX(120%) skewX(-12deg);
+}
+</style>
+</head>
+<body>
+<script>
+// Force dark mode and remove any theme switching behavior
+(function(){
+  try{
+    document.documentElement.classList.add('dark-mode');
+    if(document.body && document.body.classList){
+      document.body.classList.add('dark-mode');
+    }
+    // Remove any cards-glow class if set by previous hover logic
+    document.documentElement.classList.remove('cards-glow');
+    // Kill toggle functions if they exist
+    window.toggleDarkMode = function(){};
+    window.toggleTheme = function(){};
+    // Remove any leftover listeners bound earlier by cloning toggle buttons (if any remained)
+    document.querySelectorAll('button[onclick^="toggleDarkMode"], button[onclick^="toggleTheme"]').forEach(function(btn){
+      btn.remove();
+    });
+  }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var isDark = saved ? (saved === 'dark') : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark-mode', isDark);
+    if(document.body) document.body.classList.toggle('dark-mode', isDark);
+  } catch(e){}
+})();
+</script>
+
+<header>script</header>
+<div id="productSearchSection" style="display:flex;justify-content:center;gap:10px;margin-top:1rem;">
+<input id="productSearchInput" oninput="searchProductDetails()" placeholder="🔍 Enter Product ID..." style="padding:0.6rem 1rem;border-radius:8px;border:1px solid #ccc;font-size:1rem;width:250px;" type="text"/>
+<button onclick="searchProductDetails()">Search</button>
+</div>
+<div id="productDetailsResult" style="font-weight:bold;padding:1rem;background-color:#ffffff;border-radius:8px;margin:1rem auto;text-align:center;max-width:600px;"></div>
+<main>
+<input id="globalSearch" oninput="globalSearchScripts()" placeholder="🔍 ابحث في جميع السكربتات..." style="width:100%;max-width:600px;padding:0.8rem;border-radius:10px;border:1px solid #ccc;margin:20px auto;display:block;font-size:1rem;" type="text"/>
+<div id="globalResults" style="margin-top:1.5rem;"></div>
+<div id="smartSuggestions" style="margin-top:1.5rem;display:none;"></div>
+<div class="grid" id="mainGrid"></div>
+<div class="hidden" id="scriptView">
+<h2 id="scriptTitle"></h2>
+<div id="scriptsContainer"></div>
+<textarea id="newScriptInput" placeholder="أدخل السكربت هنا..." style="display:none;width:100%;max-width:420px;padding:0.6rem;margin-top:0.6rem;border-radius:8px;border:1px solid #ccc;font-size:0.9rem;height:70px;line-height:1.3;"></textarea>
+<button class="admin-only" onclick="addScript()" style="background:#4CAF50; font-weight:bold;">➕ Add Script</button>
+<br/>
+<button onclick="goBack()">🔙 Back</button>
+</div>
+<div id="manageCards" style="display:none;">
+<h2>Manage Cards</h2>
+<input id="newCardInput" placeholder="New Card Name" type="text"/>
+<button class="admin-only" onclick="addCard()">➕ Add Card</button>
+<div id="cardList"></div>
+</div>
+<style>
+  #warrantySection {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 2rem 0 2rem;
+  }
+  #warrantyInput {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 250px;
+    margin-left: 1rem;
+  }
+  #warrantyResult {
+    font-weight: bold;
+    padding: 0.6rem 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  #warrantyManager {
+    display: none;
+    margin: 2rem;
+  }
+  
+  
+  #warrantyTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  #warrantyTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+</style>
+<!-- ✅ واجهة المدير لإدارة الأوزان -->
+</main>
+<!-- ✅ Dynamic Property Manager -->
+<!-- ✅ Product Description Manager -->
+<div class="admin-only" id="descriptionManager" style="display:none; margin:2rem;"><div style="text-align:left; margin:1rem;">
+<label style="font-weight:bold;">📥 Import File:</label>
+<input accept=".xlsx, .xls" id="importFileInput" style="margin-right:10px; padding:6px;" type="file"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;max-width:500px;">
+</div>
+<table style="width:100%;border-collapse:collapse;margin-top:1rem;font-family:'Cairo',sans-serif;font-size:0.95rem;text-align:center;">
+<thead style="background:#f1f1f1;">
+<tr>
+<th style="border:1px solid #ccc;padding:8px;">Product ID</th>
+<th style="border:1px solid #ccc;padding:8px;">Name</th>
+<th style="border:1px solid #ccc;padding:8px;">Warranty</th>
+<th style="border:1px solid #ccc;padding:8px;">Weight</th>
+<th style="border:1px solid #ccc;padding:8px;">Description</th>
+<th style="border:1px solid #ccc;padding:8px;">Actions</th>
+</tr>
+</thead>
+<tbody id="mainDataTableBody"></tbody>
+</table>
+</div>
+<div id="adminBar" style="background:#f0f0f0;padding:10px;text-align:center;font-size:0.9rem;">
+<span id="authStatus">🔒 Read-Only Mode</span>
+<input id="passwordInput" placeholder="Password" style="padding:5px;border-radius:6px;border:1px solid #ccc;" type="password"/>
+<button onclick="checkPassword()">Login</button>
+<button id="changePassBtn" onclick="changePassword()" style="display:none;background:#3498db;color:#fff;margin-right:10px;">Change Password</button>
+<button id="logoutBtn" onclick="logout()" style="display:none;background:#e74c3c;color:#fff;margin-right:10px;">Logout</button>
+</div>
+<footer style="display:flex;justify-content:center;align-items:center;gap:15px;padding:1.2rem;background:#1a1a2e;color:white;">
+<img alt="Logo" src="data:image/png;base64,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" style="height:40px;border-radius:10px;"/>
+<div style="font-size:0.95rem;line-height:1.4;text-align:right;">
+    © 2025 <strong>script</strong> — All rights reserved.<br/>
+<span style="color:#4fd1c5;font-weight:bold;">Developed by Ahmad Taha</span>
+</div>
+</footer>
+<script>
+// === Stable key helpers (avoid missing scripts due to title/emoji edits) ===
+function normTitle(title){
+  return String(title || "").replace(/\s+/g, " ").trim();
+}
+function keyFor(title){
+  return `scripts_${normTitle(title)}`;
+}
+
+// One-time migration: normalize all existing script keys
+(function migrateScriptKeys(){
+  try{
+    const keys = Object.keys(localStorage).filter(k => k.startsWith("scripts_"));
+    keys.forEach(k => {
+      const raw = k.slice(8);
+      const norm = keyFor(raw);
+      if (k !== norm && localStorage.getItem(k) && !localStorage.getItem(norm)){
+        localStorage.setItem(norm, localStorage.getItem(k));
+        localStorage.removeItem(k);
+      }
+    });
+  }catch(e){ console.warn("Key migration skipped:", e); }
+})();
+
+    let cards = [];
+
+try {
+  const stored = JSON.parse(localStorage.getItem("cards") || "[]");
+  if (Array.isArray(stored) && stored.length > 0) {
+    cards = stored;
+  } else {
+    throw new Error("Cards empty or invalid");
+  }
+} catch {
+  // 🔁 استعادة البطاقات من مفاتيح السكربتات
+  cards = Object.keys(localStorage)
+    .filter(k => k.startsWith("scripts_"))
+    .map(k => {
+      const full = k.replace("scripts_", "").trim();
+      const emoji = full.match(/^([\uD800-\uDBFF][\uDC00-\uDFFF]|[\p{Emoji}])/u)?.[0] || "🗂️";
+      const title = full.replace(emoji, "").trim();
+      return { emoji, title };
+    });
+
+  // ✅ حفظ النسخة المستعادة في localStorage
+  localStorage.setItem("cards", JSON.stringify(cards));
+  console.warn("🔁 cards were auto-restored from script keys:", cards);
+}
+    let currentScripts = [];
+    let currentTopic = "";
+
+    
+    function renderCards() {
+      const grid = document.getElementById('mainGrid');
+      grid.innerHTML = '';
+      cards.forEach((card, index) => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.onclick = function() { openScripts(`${card.emoji} ${card.title}`); };
+        div.innerHTML = `
+          <span contenteditable="true" onblur="renameCard(${index}, this)">${card.emoji} ${card.title}</span>
+          <button class="admin-only" onclick="event.stopPropagation(); deleteCard(${index})">❌</button><span title="احذف الفئة بالكامل" style="display:none;"></span></button>
+        `;
+        grid.appendChild(div);
+      });
+      document.getElementById('cardList').innerHTML = cards.map(card => `<div>${card.emoji} ${card.title}</div>`).join('');
+      localStorage.setItem('cards', JSON.stringify(cards));
+    }
+    
+
+function renameCard(index, el) {
+      const oldTitle = `${cards[index].emoji} ${cards[index].title}`;
+      const oldKey = keyFor(oldTitle);
+
+      const parts = el.textContent.trim().replace(/\s+/g,' ').split(' ');
+      cards[index].emoji = parts[0];
+      cards[index].title = parts.slice(1).join(' ');
+
+      const newTitle = `${cards[index].emoji} ${cards[index].title}`;
+      const newKey = keyFor(newTitle);
+
+      try{
+        if (oldKey !== newKey && localStorage.getItem(oldKey) && !localStorage.getItem(newKey)){
+          localStorage.setItem(newKey, localStorage.getItem(oldKey));
+          localStorage.removeItem(oldKey);
+        }
+      }catch(e){ console.warn("Rename migration skipped:", e); }
+
+      renderCards();
+        
+    }
+
+    function addCard() {
+      const input = document.getElementById('newCardInput');
+      const value = input.value.trim();
+      if (value) {
+        cards.push({ emoji: '🆕', title: value });
+        input.value = '';
+        renderCards();
+      }
+    }
+
+    function deleteCard(index) {
+      cards.splice(index, 1);
+      renderCards();
+    }
+
+    function openScripts(title) {
+      currentTopic = title;
+      document.getElementById('scriptTitle').textContent = title;
+      document.getElementById('mainGrid').classList.add('hidden');
+      document.getElementById('manageCards').classList.add('hidden');
+      document.getElementById('scriptView').classList.remove('hidden');
+
+      // Load using normalized key
+      currentScripts = JSON.parse(localStorage.getItem(keyFor(title)) || "[]");
+
+      // Fallback: try to find any scripts_ key that normalizes to the same title
+      if (!currentScripts.length){
+        try{
+          const fallbackKey = Object.keys(localStorage).find(k => k.startsWith("scripts_") && normTitle(k.slice(8)) === normTitle(title));
+          if (fallbackKey){
+            currentScripts = JSON.parse(localStorage.getItem(fallbackKey) || "[]");
+          }
+        }catch(e){ /* ignore */ }
+      }
+
+      renderScripts();
+        
+    }
+
+    function goBack() {
+      document.getElementById('mainGrid').classList.remove('hidden');
+      document.getElementById('manageCards').classList.remove('hidden');
+      document.getElementById('scriptView').classList.add('hidden');
+    }
+
+    function addScript() {
+      const input = document.getElementById('newScriptInput');
+      const value = input.value.trim();
+      if (value) {
+        currentScripts.push(value);
+        input.value = '';
+        saveScripts();
+        renderScripts();
+      }
+    }
+
+    function deleteScript(index) {
+      currentScripts.splice(index, 1);
+      saveScripts();
+      renderScripts();
+    }
+
+    function editScript(index, input) {
+      currentScripts[index] = input.value;
+      saveScripts();
+    }
+
+    function copyScriptContent(btn) {
+  let raw = btn && btn.dataset ? btn.dataset.script : '';
+  try { raw = JSON.parse(raw); } catch (e) {}
+  if (typeof raw !== 'string') raw = String(raw || '');
+  navigator.clipboard.writeText(raw).then(() => {
+    const toast = document.createElement('div');
+    toast.textContent = '✅ Script copied!';
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.right = '20px';
+    toast.style.backgroundColor = '#1a1a2e';
+    toast.style.color = 'white';
+    toast.style.padding = '10px 20px';
+    toast.style.borderRadius = '8px';
+    toast.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+    toast.style.zIndex = '9999';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+  });
+}
+
+    function saveScripts() {
+      localStorage.setItem(keyFor(currentTopic), JSON.stringify(currentScripts));
+    }
+
+    
+
+function renderScripts() {
+  const container = document.getElementById('scriptsContainer');
+  container.innerHTML = '';
+  currentScripts.forEach((script, index) => {
+    const div = document.createElement('div');
+    div.className = 'script-item';
+    div.id = 'scriptItem' + index;
+
+    const safeScript = script
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+
+    const content = isAdmin
+      ? `<textarea id="scriptInput${index}" rows="3" style="width:100%;max-width:640px;font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;font-size:0.9rem;line-height:1.35;padding:6px;border-radius:6px;border:1px solid #ccc;">${safeScript}</textarea>`
+      : `<div class="script-view">
+           <pre id="scriptPre${index}" style="flex:1; margin:0; font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif; white-space:pre-wrap; word-break:break-word; direction:rtl; text-align:right; font-size:1rem;">${safeScript}</pre>
+           <div class="fade-overlay" id="fade${index}"></div>
+           
+         </div>`;
+
+    const deleteBtn = isAdmin
+      ? `<button class='delete-btn' onclick='deleteScript(${index})'>❌</button>`
+      : '';
+
+    div.innerHTML = `
+      ${content}
+      <button class='copy-btn' onclick="copyScriptContent(this)">📋</button>
+      ${deleteBtn}
+    `;
+
+    
+    // ✅ Safely attach the raw script to the copy button to preserve new lines and avoid undefined
+    (function(){
+      const btn = div.querySelector('.copy-btn');
+      if (btn) btn.dataset.script = String(script);
+    })();
+// If not admin, start collapsed and show overlay only when scrollable
+    if (!isAdmin) {
+      // Detect if content overflows to decide showing overlay
+      setTimeout(() => {
+        const pre = div.querySelector('pre');
+        const overlay = div.querySelector('.fade-overlay');
+        if (pre && overlay) {
+          if (pre.scrollHeight > pre.clientHeight + 4) {
+            overlay.style.display = 'block';
+          } else {
+            overlay.style.display = 'none';
+          }
+        }
+      }, 0);
+    }
+
+    container.appendChild(div);
+  });
+}
+
+
+    renderCards();
+  
+
+
+function globalSearchScripts() {
+  const query = document.getElementById("globalSearch").value.toLowerCase();
+  const resultsDiv = document.getElementById("globalResults");
+  const grid = document.getElementById("mainGrid");
+  resultsDiv.innerHTML = "";
+
+  if (!query) {
+    grid.style.display = "grid";
+    return;
+  }
+
+  grid.style.display = "none";
+
+  let resultsHTML = "<h3>Search Results:</h3>";
+  let found = false;
+
+  cards.forEach(card => {
+    const key = keyFor(`${card.emoji} ${card.title}`);
+    const scripts = JSON.parse(localStorage.getItem(key)) || [];
+    const matches = scripts.filter(script => script.toLowerCase().includes(query));
+
+    if (matches.length > 0) {
+      found = true;
+      resultsHTML += `<div style="margin-bottom:1rem;"><strong>${card.emoji} ${card.title}:</strong><ul>`;
+      matches.forEach(script => {
+        resultsHTML += `<li style="background:#eef2f7;padding:8px;border-radius:6px;margin-top:5px;">${script}</li>`;
+      });
+      resultsHTML += "</ul></div>";
+    }
+  });
+
+  if (!found) {
+    resultsHTML += "<p>No matching results.</p>";
+  }
+
+  resultsDiv.innerHTML = resultsHTML;
+}
+</script>
+<script>
+let isAdmin = false;
+
+
+function changePassword() {
+  const newPassword = prompt("🔐 أدخل كلمة السر الجديدة:");
+  if (newPassword && newPassword.trim().length >= 3) {
+    localStorage.setItem('adminPassword', newPassword.trim());
+    alert("✅ تم Change Password بنجاح");
+  } else {
+    alert("❌ Invalid password");
+  }
+}
+
+
+function checkPassword() {
+  const input = document.getElementById('passwordInput');
+  const savedPass = localStorage.getItem('adminPassword') || 'admin123';
+  if (input.value === savedPass) {
+    isAdmin = true;
+    document.getElementById('authStatus').textContent = '🔓 لديك صلاحيات التعديل';
+    document.getElementById('changePassBtn').style.display = 'inline-block';
+    document.getElementById('logoutBtn').style.display = 'inline-block';
+    updateAdminControls();
+
+    // ✅ تحميل جميع السكربتات من كل الفئات
+    currentScripts = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith("scripts_")) {
+        const scripts = JSON.parse(localStorage.getItem(key) || "[]");
+        currentScripts = currentScripts.concat(scripts);
+      }
+    }
+
+    renderScripts();
+
+    renderScripts();
+  } else {
+    alert("❌ Password غير صحيحة");
+  }
+}
+
+function logout() {
+  document.getElementById('changePassBtn').style.display = 'none';
+  document.getElementById('logoutBtn').style.display = 'none';
+  isAdmin = false;
+  document.getElementById('authStatus').textContent = '🔒 Read-Only Mode';
+  updateAdminControls();
+    renderScripts();
+}
+
+function updateAdminControls() {
+  document.querySelectorAll('.admin-only').forEach(el => {
+    el.style.display = isAdmin ? 'inline-block' : 'none';
+  });
+  document.querySelectorAll('.card span').forEach(span => {
+    span.contentEditable = isAdmin;
+  });
+  const manageCards = document.getElementById('manageCards');
+  if (manageCards) manageCards.style.display = isAdmin ? 'block' : 'none';
+
+  const newCardInput = document.getElementById('newCardInput');
+  const newScriptInput = document.getElementById('newScriptInput');
+  if (newCardInput) newCardInput.style.display = isAdmin ? 'block' : 'none';
+  if (newScriptInput) newScriptInput.style.display = isAdmin ? 'block' : 'none';
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  updateAdminControls();
+    renderScripts();
+});
+</script>
+<style>
+#toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #1a1a2e;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: fixed;
+  z-index: 9999;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+<div id="toast"></div>
+<script>
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.className = "show";
+  setTimeout(() => {
+    toast.className = toast.className.replace("show", "");
+  }, 2500);
+}
+</script>
+<div id="infoModal" onclick="this.style.display='none'" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;justify-content:center;align-items:center;">
+<div style="background:#fff;color:#111;padding:20px 30px;border-radius:10px;max-width:90%;max-height:80%;overflow:auto;font-size:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.3);font-family:'Cairo',sans-serif;">
+<div id="infoModalContent" style="white-space:pre-wrap;"></div>
+</div>
+</div>
+<script>
+function renderMainDataTable() {
+  const table = document.getElementById("mainDataTableBody");
+  if (!table) return;
+
+  const descriptions = JSON.parse(localStorage.getItem("productDescriptions") || "[]");
+  const warrantyData = JSON.parse(localStorage.getItem("warrantyData") || "[]");
+  const weightData = JSON.parse(localStorage.getItem("weightData") || "[]");
+
+  const dataMap = {};
+
+  descriptions.forEach(item => {
+    dataMap[item.id] = {
+      id: item.id,
+      name: item.name,
+      desc: item.desc,
+      warranty: "",
+      weight: ""
+    };
+  });
+
+  warrantyData.forEach(w => {
+    if (!dataMap[w.id]) dataMap[w.id] = { id: w.id, name: "", desc: "", warranty: "", weight: "" };
+    dataMap[w.id].warranty = w.years;
+  });
+
+  weightData.forEach(w => {
+    if (!dataMap[w.id]) dataMap[w.id] = { id: w.id, name: "", desc: "", warranty: "", weight: "" };
+    dataMap[w.id].weight = w.kg;
+  });
+
+  const allData = Object.values(dataMap);
+  table.innerHTML = "";
+
+  allData.forEach((item) => {
+    const row = createRow(item, false);
+    table.appendChild(row);
+  });
+
+  const emptyRow = createRow({id:"", name:"", desc:"", warranty:"", weight:""}, true);
+  table.appendChild(emptyRow);
+}
+
+function createCell(value, field, isTextarea = false, isNewRow = false) {
+  const td = document.createElement("td");
+  let input;
+
+  if (isTextarea) {
+    input = document.createElement("textarea");
+    input.value = value || "";
+    input.style.height = "40px";
+    input.onfocus = () => input.style.height = "120px";
+    input.onblur = () => input.style.height = "40px";
+  } else {
+    input = document.createElement("input");
+    input.type = "text";
+    input.value = value || "";
+  }
+
+  input.dataset.field = field;
+  
+  if (field === "id") {
+    input.onblur = () => handleChange(input, field, isTextarea, isNewRow);
+  } else {
+    input.oninput = () => handleChange(input, field, isTextarea, isNewRow);
+  }
+
+  td.appendChild(input);
+  return td;
+}
+
+function createRow(data, isNewRow = false) {
+  const tr = document.createElement("tr");
+  tr.appendChild(createCell(data.id, "id", false, isNewRow));
+  tr.appendChild(createCell(data.name, "name", false, isNewRow));
+  tr.appendChild(createCell(data.warranty, "warranty", false, isNewRow));
+  tr.appendChild(createCell(data.weight, "weight", false, isNewRow));
+  tr.appendChild(createCell(data.desc, "desc", true, isNewRow));
+  return tr;
+}
+
+function handleChange(el, field, isTextarea, isNewRow) {
+  const row = el.closest("tr");
+  const inputs = row.querySelectorAll("input, textarea");
+
+  const data = {};
+  inputs.forEach(input => {
+    data[input.dataset.field] = input.value.trim();
+  });
+
+  
+  if (!data.id) {
+    if (!isNewRow) row.remove();
+    return;
+  }
+
+
+  const descriptions = JSON.parse(localStorage.getItem("productDescriptions") || "[]");
+  const warrantyData = JSON.parse(localStorage.getItem("warrantyData") || "[]");
+  const weightData = JSON.parse(localStorage.getItem("weightData") || "[]");
+
+  const updateList = (list, id, key, value) => {
+    const index = list.findIndex(item => item.id === id);
+    if (index !== -1) {
+      list[index][key] = value;
+    } else {
+      const newItem = { id };
+      newItem[key] = value;
+      list.push(newItem);
+    }
+  };
+
+  updateList(descriptions, data.id, "name", data.name);
+  updateList(descriptions, data.id, "desc", data.desc);
+  updateList(warrantyData, data.id, "years", data.warranty);
+  updateList(weightData, data.id, "kg", data.weight);
+
+  localStorage.setItem("productDescriptions", JSON.stringify(descriptions));
+  localStorage.setItem("warrantyData", JSON.stringify(warrantyData));
+  localStorage.setItem("weightData", JSON.stringify(weightData));
+
+  if (isNewRow) {
+    renderMainDataTable();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderMainDataTable();
+});
+</script>
+<script>
+function searchProductDetails() {
+  const input = document.getElementById('productSearchInput').value.trim();
+  const resultDiv = document.getElementById('productDetailsResult');
+  if (!input) {
+    resultDiv.innerHTML = "";
+    return;
+  }
+
+  const descriptions = JSON.parse(localStorage.getItem("productDescriptions") || "[]");
+  const warrantyData = JSON.parse(localStorage.getItem("warrantyData") || "[]");
+  const weightData = JSON.parse(localStorage.getItem("weightData") || "[]");
+
+  const product = descriptions.find(p => p.id === input);
+  const warranty = warrantyData.find(w => w.id === input);
+  const weight = weightData.find(w => w.id === input);
+
+  
+if (product || warranty || weight) {
+  const esc = s => String(s||'').replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  let rawHTML = "";
+  let chipsHTML = "";
+
+  if (product && product.desc) {
+    const desc = product.desc;
+    rawHTML = `<div style="margin-top:.4rem;"><pre class="desc-pre">${esc(desc)}</pre></div>`;
+
+    const lines = desc.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    const templates = {
+      "الخامة": "خامة المنتج {value}",
+      "القوة": "قوة المنتج {value}",
+      "الجهد": "الجهد {value}",
+      "التردد": "تردد التشغيل {value}",
+      "الضمان": "الضمان {value}",
+      "السعر": "السعر {value}",
+      "التوصيل": "التوصيل {value}",
+      "الدفع": "الدفع {value}",
+      "المقاس": "المقاس {value}",
+      "الوزن": "وزن المنتج {value}"
+    };
+    const normalizeLabel = (label) => label.replace(/^[^ء-يA-Za-z0-9]+/,'').replace(/\s+$/,'');
+
+    const chips = [];
+    lines.forEach(line => {
+      const m = line.match(/(.+?):\s*(.+)/);
+      if (!m) return;
+      const rawLabel = normalizeLabel(m[1].trim());
+      const value = m[2].trim();
+      const templ = templates[rawLabel] || `${rawLabel} {value}`;
+      const toCopy = templ.replace('{value}', value);
+      chips.push(`<button class="prop-chip" data-copy="${esc(toCopy)}" onclick="copyChip(this)">${esc(rawLabel)}</button>`);
+    });
+    if (chips.length) chipsHTML = `<div class="chips">${chips.join('')}</div>`;
+  }
+
+  resultDiv.innerHTML = `
+      <div style='font-size:1rem;text-align:right;'>
+        🆔 <strong>${esc(input)}</strong><br>
+        🛡️ <strong>الضمان:</strong> ${warranty?.years ? warranty.years + " سنة" : "-"}<br>
+        ⚖️ <strong>الوزن:</strong> ${weight?.kg ? weight.kg + " كغم" : "-"}<br>
+        ${rawHTML}
+        ${chipsHTML}
+      </div>
+    `;
+} else {
+  resultDiv.innerHTML = "❌ لم يتم العثور على منتج بهذا الـ ID";
+}
+
+}
+
+function showInfoModal(text) {
+  const modal = document.getElementById('infoModal');
+  const content = document.getElementById('infoModalContent');
+  content.textContent = text;
+  modal.style.display = 'flex';
+}
+</script>
+<script>
+document.getElementById("importFileInput").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const data = new Uint8Array(e.target.result);
+    const workbook = XLSX.read(data, { type: "array" });
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    const json = XLSX.utils.sheet_to_json(sheet);
+
+    let productDescriptions = [];
+    let warrantyData = [];
+    let weightData = [];
+
+    const existingIds = new Set();
+
+    json.forEach(row => {
+      const id = String(row["Product ID"] || "").trim();
+      
+if (!id || existingIds.has(id)) return;
+const isEmpty = !row["Name"] && !row["Description"] && !row["Warranty"] && !row["Weight"] && !row["الوزن"] && !row["Weight (kg)"];
+if (isEmpty) return;
+
+
+      if (row["Name"] || row["Description"]) {
+        productDescriptions.push({
+          id,
+          name: row["Name"] || "",
+          desc: row["Description"] || ""
+        });
+      }
+
+      if (row["Warranty"]) {
+        warrantyData.push({
+          id,
+          years: row["Warranty"]
+        });
+      }
+
+      
+let weightKey = Object.keys(row).find(key =>
+  key.toLowerCase().includes("weight") || key.includes("وزن")
+);
+const weight = weightKey ? row[weightKey] : null;
+if (weight) {
+
+        weightData.push({
+          id,
+          kg: weight
+        });
+      }
+
+      existingIds.add(id);
+    });
+
+    localStorage.setItem("productDescriptions", JSON.stringify(productDescriptions));
+    localStorage.setItem("warrantyData", JSON.stringify(warrantyData));
+    localStorage.setItem("weightData", JSON.stringify(weightData));
+
+    showToast("✅ تم استيراد الملف بنجاح!");
+    renderMainDataTable();
+  };
+
+  reader.readAsArrayBuffer(file);
+});
+</script>
+<script>
+// 🧠 Smart Suggestions with synonyms
+const synonyms = {
+  "السعر": ["غالي","مرتفع","ثمن","التكلفة","باهظ"],
+  "المقاس": ["الطول","الحجم","البعد","عرض","القياس"],
+  "الوزن": ["الثقل","الحِمل","الكيلو","جرام"],
+  "الضمان": ["الكفالة","الاستبدال","الصيانة"],
+  "المنتج": ["البضاعة","الغرض","السلعة"]
+};
+// ربط الكلمة المفتاحية بالفئة المناسبة (يجب أن تتوافق مع اسم الفئة تمامًا)
+const keywordToCategory = {
+  "السعر": "💰 السعر",
+  "المقاس": "📏 المقاس",
+  "الوزن": "⚖️ الوزن",
+  "الضمان": "🛡️ الضمان",
+  "المنتج": "🛍️ المنتج"
+};
+
+function generateSmartSuggestions(query){
+  const smartDiv = document.getElementById("smartSuggestions");
+  if(!smartDiv) return;
+  smartDiv.innerHTML = "";
+  smartDiv.style.display = "none";
+  if(!query) return;
+
+  const normalized = query.toLowerCase();
+  // العثور على الكلمة الرئيسية المطابقة أو مرادف
+  let matchedKey = null;
+  outer: for(const key in synonyms){
+    if(normalized.includes(key)) { matchedKey = key; break; }
+    for(const syn of synonyms[key]){
+      if(normalized.includes(syn)) { matchedKey = key; break outer; }
+    }
+  }
+  if(!matchedKey) return;
+
+  const categoryTitle = keywordToCategory[matchedKey];
+  if(!categoryTitle) return;
+
+  const scripts = JSON.parse(localStorage.getItem("scripts_"+categoryTitle) || "[]");
+  const matches = scripts.filter(sc=>{
+      const l=sc.toLowerCase();
+      if(l.includes(matchedKey)) return true;
+      return synonyms[matchedKey].some(syn=>l.includes(syn));
+  }).slice(0,3);
+
+  if(matches.length===0) return;
+
+  // إنشاء القسم
+  let html = "<h3 style='margin:0 0 10px 0;'>🧠 اقتراحات ذكية</h3>";
+  html += `<div style='font-weight:bold;margin-bottom:6px;'>${categoryTitle}</div>`;
+  matches.forEach(script=>{
+    const safe = script.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    html += \`
+    <div class="smart-card">
+      <pre style="flex:1;margin:0;white-space:pre-wrap;word-break:break-word;direction:rtl;text-align:right;font-family:'Cairo',sans-serif;">\${safe}</pre>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(\${JSON.stringify(script)})">📋</button>
+    </div>\`;
+  });
+  smartDiv.innerHTML = html;
+  smartDiv.style.display = "block";
+}
+
+// 🔄 تعديل دالة البحث العامة لاستدعاء الاقتراحات الذكية
+const originalGlobalSearchScripts = globalSearchScripts;
+function globalSearchScripts(){
+  originalGlobalSearchScripts();
+  generateSmartSuggestions(document.getElementById("globalSearch").value);
+}
+</script>
+<script>
+document.getElementById("importFileInput").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const data = new Uint8Array(e.target.result);
+    const workbook = XLSX.read(data, { type: "array" });
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const rows = XLSX.utils.sheet_to_json(sheet);
+
+    const descriptions = [];
+    const warrantyData = [];
+    const weightData = [];
+
+    rows.forEach(row => {
+      if (row["Item ID"]) {
+        const id = String(row["Item ID"]).trim();
+
+        if (row["Name"] || row["Description"]) {
+          descriptions.push({
+            id,
+            name: row["Name"] || "",
+            desc: row["Description"] || ""
+          });
+        }
+        if (row["Warranty"]) {
+          warrantyData.push({ id, years: row["Warranty"] });
+        }
+        if (row["Weight (g)"]) {
+          weightData.push({ id, kg: row["Weight (g)"] });
+        }
+      }
+    });
+
+    localStorage.setItem("productDescriptions", JSON.stringify(descriptions));
+    localStorage.setItem("warrantyData", JSON.stringify(warrantyData));
+    localStorage.setItem("weightData", JSON.stringify(weightData));
+
+    alert("✅ تم استيراد البيانات بنجاح!");
+    renderMainDataTable();
+  };
+
+  reader.readAsArrayBuffer(file);
+});
+</script>
+<script>
+}
+</script>
+
+
+<!-- Strip leading 🆕 emoji from card titles & list (design-only patch) -->
+<script>
+(function(){
+  function stripNewEmoji(text){
+    return text ? text.replace(/^\s*🆕\s*/u, '') : text;
+  }
+  function applyEmojiStrip(){
+    // main grid titles
+    document.querySelectorAll('#mainGrid .card span[contenteditable]').forEach(function(el){
+      var t = el.textContent || '';
+      var nt = stripNewEmoji(t);
+      if (nt !== t) el.textContent = nt;
+    });
+    // side list (if exists)
+    var list = document.getElementById('cardList');
+    if (list){
+      list.querySelectorAll('div').forEach(function(el){
+        var t = el.textContent || '';
+        var nt = stripNewEmoji(t);
+        if (nt !== t) el.textContent = nt;
+      });
+    }
+  }
+  // Hook into renderCards if available
+  var _render = window.renderCards;
+  if (typeof _render === 'function'){
+    window.renderCards = function(){
+      _render.apply(this, arguments);
+      applyEmojiStrip();
+    };
+  }
+  document.addEventListener('DOMContentLoaded', applyEmojiStrip);
+  // Also observe future changes just in case
+  var grid = document.getElementById('mainGrid');
+  if (grid && 'MutationObserver' in window){
+    var mo = new MutationObserver(applyEmojiStrip);
+    mo.observe(grid, { childList: true, subtree: true });
+  }
+})();
+</script>
+
+
+
+<!-- Footer enhancement: wrap logo, add caption, and normalize dev credit color -->
+<script>
+(function(){
+  function ensureLogoCaption(){
+    var footer = document.querySelector('footer');
+    if(!footer) return;
+    var img = footer.querySelector('img[alt="Logo"]');
+    if(!img) return;
+    // Wrap once
+    if(!img.parentElement || !img.parentElement.classList.contains('logo-wrap')){
+      var wrap = document.createElement('div');
+      wrap.className = 'logo-wrap';
+      img.replaceWith(wrap);
+      wrap.appendChild(img);
+      // Caption
+      var cap = document.createElement('div');
+      cap.className = 'logo-caption';
+      cap.textContent = 'by ahmad taha';
+      wrap.appendChild(cap);
+    } else {
+      // Ensure caption exists
+      var exists = img.parentElement.querySelector('.logo-caption');
+      if(!exists){
+        var cap = document.createElement('div');
+        cap.className = 'logo-caption';
+        cap.textContent = 'by ahmad taha';
+        img.parentElement.appendChild(cap);
+      }
+    }
+  }
+
+  function normalizeDevCredit(){
+    var footer = document.querySelector('footer');
+    if(!footer) return;
+    var nodes = footer.querySelectorAll('*');
+    var re = /developed\s+by\s+ahmad\s+taha/i;
+    nodes.forEach(function(n){
+      var t = (n.textContent || '').trim();
+      if(re.test(t)){
+        n.classList.add('dev-credit');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    ensureLogoCaption();
+    normalizeDevCredit();
+  });
+})();
+</script>
+
+
+
+<script>
+(function(){
+  function stripNewEmoji(text){
+    return text ? text.replace(/^\s*🆕\s*/u, '') : text;
+  }
+  function rebindCardClicks(){
+    document.querySelectorAll('#mainGrid .card').forEach(function(cardEl){
+      var label = cardEl.querySelector('span[contenteditable]');
+      var clean = stripNewEmoji((label && label.textContent) ? label.textContent.trim() : '');
+      cardEl.onclick = function(){ 
+        try { window.openScripts && openScripts(clean); } catch(e){ console.warn(e); }
+      };
+    });
+  }
+  function afterRender(){
+    // Strip visual emoji (already done in previous patch, keep safety here)
+    document.querySelectorAll('#mainGrid .card span[contenteditable]').forEach(function(el){
+      var t = el.textContent || '';
+      var nt = stripNewEmoji(t);
+      if (nt !== t) el.textContent = nt;
+    });
+    var list = document.getElementById('cardList');
+    if (list){
+      list.querySelectorAll('div').forEach(function(el){
+        var t = el.textContent || '';
+        var nt = stripNewEmoji(t);
+        if (nt !== t) el.textContent = nt;
+      });
+    }
+    rebindCardClicks();
+  }
+  // Monkey patch renderCards to ensure fixes run after each render
+  if (typeof window.renderCards === 'function'){
+    var _r = window.renderCards;
+    window.renderCards = function(){
+      _r.apply(this, arguments);
+      afterRender();
+    };
+  } else {
+    document.addEventListener('DOMContentLoaded', afterRender);
+  }
+  // Observe changes in grid to rebind, just in case
+  document.addEventListener('DOMContentLoaded', function(){
+    var grid = document.getElementById('mainGrid');
+    if (grid && 'MutationObserver' in window){
+      var mo = new MutationObserver(afterRender);
+      mo.observe(grid, { childList: true, subtree: true });
+    }
+  });
+})();
+</script>
+
+
+
+<script>
+// Enable perf-lite mode and add small runtime tweaks for speed
+(function(){
+  // 1) Perf mode class
+  document.documentElement.classList.add('perf-lite');
+
+  // 2) Lazy-load and async-decode images
+  function tuneImages(root){
+    (root || document).querySelectorAll('img').forEach(function(img){
+      if(!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+      if(!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+      img.setAttribute('fetchpriority','low');
+    });
+  }
+
+  // 3) Remove MutationObserver we added earlier (if exists) by not creating new ones;
+  // our patched renderCards already handles bindings efficiently.
+  // (No-op here; just ensure we don't set extra observers.)
+
+  // 4) Debounce our afterRender if present
+  if (window.renderCards && !window.__perfWrapped){
+    var _r = window.renderCards;
+    var raf = null;
+    window.renderCards = function(){
+      _r.apply(this, arguments);
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function(){
+        // Try to run our maintenance hooks if defined
+        if (typeof window.afterRender === 'function') {
+          try { window.afterRender(); } catch(e){}
+        }
+        tuneImages(document);
+      });
+    };
+    window.__perfWrapped = true;
+  }
+
+  // Initial pass
+  document.addEventListener('DOMContentLoaded', function(){
+    tuneImages(document);
+  });
+})();
+</script>
+
+
+
+<script>
+// Default to Light (day) mode; keep existing toggle logic
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    // If page starts with .dark-mode, remove to default to light
+    document.documentElement.classList.remove('dark-mode');
+    document.body && document.body.classList && document.body.classList.remove('dark-mode');
+  });
+})();
+</script>
+
+
+
+<script>
+/* ===== Unified theme toggle + hover glow ===== */
+(function(){
+  var KEY = 'theme'; // 'light' | 'dark'
+
+  function setTheme(theme){
+    var root = document.documentElement;
+    if(theme === 'dark'){
+      root.classList.add('dark-mode');
+    }else{
+      root.classList.remove('dark-mode');
+    }
+    try{ localStorage.setItem(KEY, theme); }catch(e){}
+  }
+
+  function initTheme(){
+    var saved = null;
+    try{ saved = localStorage.getItem(KEY); }catch(e){}
+    if(saved === 'dark' || saved === 'light'){
+      setTheme(saved);
+      return;
+    }
+    // Fallback: system preference
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+
+  // Expose a single toggle (and keep compatibility with existing onclick="toggleDarkMode()")
+  window.toggleTheme = function(){
+    var isDark = document.documentElement.classList.contains('dark-mode');
+    setTheme(isDark ? 'light' : 'dark');
+  };
+  window.toggleDarkMode = window.toggleTheme;
+
+  // Hover glow on cards when hovering the toggle button
+  function bindToggleHover(){
+    var btn = document.querySelector('button[onclick^="toggleDarkMode"], button[onclick^="toggleTheme"]');
+    if(!btn) return;
+    var root = document.documentElement;
+    btn.addEventListener('mouseenter', function(){ root.classList.add('cards-glow'); });
+    btn.addEventListener('mouseleave', function(){ root.classList.remove('cards-glow'); });
+    btn.addEventListener('touchstart', function(){ root.classList.add('cards-glow'); setTimeout(function(){ root.classList.remove('cards-glow'); }, 700); }, {passive:true});
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    initTheme();
+    bindToggleHover();
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  function bindToggleHover(){
+    var btn = document.querySelector('button[onclick^="toggleDarkMode"], button[onclick^="toggleTheme"]');
+    if(!btn) return;
+    var root = document.documentElement;
+    // Remove previous listeners by cloning
+    var clone = btn.cloneNode(true);
+    btn.parentNode.replaceChild(clone, btn);
+    clone.addEventListener('mouseenter', function(){ root.classList.add('cards-glow'); });
+    clone.addEventListener('mouseleave', function(){ root.classList.remove('cards-glow'); });
+    clone.addEventListener('focus', function(){ root.classList.add('cards-glow'); });
+    clone.addEventListener('blur', function(){ root.classList.remove('cards-glow'); });
+    clone.addEventListener('touchstart', function(){ root.classList.add('cards-glow'); setTimeout(function(){ root.classList.remove('cards-glow'); }, 600); }, {passive:true});
+  }
+  document.addEventListener('DOMContentLoaded', bindToggleHover);
+})();
+</script>
+
+
+
+<script>
+(function(){
+  function applyToggleVisual(){
+    var btn = document.querySelector('button[onclick^="toggleDarkMode"], button[onclick^="toggleTheme"]');
+    if(!btn) return;
+    var isDark = document.documentElement.classList.contains('dark-mode');
+    btn.textContent = isDark ? '☀️' : '🌙';
+    btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    btn.setAttribute('title', isDark ? 'الوضع النهاري' : 'الوضع الليلي');
+  }
+
+  // Patch toggleDarkMode to call applyToggleVisual too
+  if (typeof window.toggleDarkMode === 'function'){
+    var _t = window.toggleDarkMode;
+    window.toggleDarkMode = function(){
+      _t.apply(this, arguments);
+      applyToggleVisual();
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    applyToggleVisual();
+  });
+})();
+</script>
+
+
+<script>
+// Auto-detect "Back" buttons by text and add .btn-back class (covers dynamic pages)
+(function(){
+  function normalizeBackButtons(root){
+    (root || document).querySelectorAll('button, a').forEach(function(el){
+      var t = (el.textContent || '').trim().toLowerCase();
+      if(!t) return;
+      if (t === 'back' || t === 'رجوع' || t === 'عودة'){
+        el.classList.add('btn-back');
+      }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    normalizeBackButtons(document);
+  });
+})();
+</script>
+
+
+
+<!-- Moved late scripts to before 
+<!-- Final overrides: unify button colors (neon green) & keep delete red -->
+<style id="final-overrides">
+  .copy-btn,
+  .admin-only,
+  button,
+  .btn,
+  button[onclick="searchProductDetails()"],
+  button[onclick="checkPassword()"]{
+    background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+    color: #04140e !important;
+    border: 1px solid rgba(255,255,255,.06) !important;
+    box-shadow: 0 8px 26px rgba(0,255,160,.26), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+  }
+  .delete-btn{
+    background: linear-gradient(180deg, #ff5d5d, #ef4444) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 26px rgba(239,68,68,.28), 0 0 0 1px rgba(239,68,68,.35) inset !important;
+  }
+</style>
+
+<!-- Final patch: keep toggleDarkMode aliased to toggleTheme and update icon/title reliably -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  try{
+    if (typeof window.toggleTheme === 'function') {
+      window.toggleDarkMode = window.toggleTheme;
+    }
+  }catch(e){}
+  var btn = document.querySelector('button[onclick^="toggleDarkMode"], button[onclick^="toggleTheme"]');
+  function refreshToggleIcon(){
+    var isDark = document.documentElement.classList.contains('dark-mode');
+    if (btn){
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      btn.setAttribute('title', isDark ? 'الوضع النهاري' : 'الوضع الليلي');
+    }
+  }
+  if (btn){
+    btn.addEventListener('click', function(){ setTimeout(refreshToggleIcon, 0); });
+  }
+  refreshToggleIcon();
+});
+</script>
+
+</body> for valid HTML structure -->
+<script>
+function copyScriptContent(btn) {
+  const text = btn.dataset.script;
+  navigator.clipboard.writeText(text)
+    .then(() => showToast("✅ Script copied!"))
+    .catch(err => showToast("❌ فشل النسخ"));
+}
+</script>
+<script>
+function copyChip(btn){
+  const text = (btn && btn.dataset && btn.dataset.copy) ? btn.dataset.copy : '';
+  if (!text) return;
+  navigator.clipboard.writeText(text)
+    .then(()=> typeof showToast==='function' ? showToast('Copied') : null)
+    .catch(()=> alert('Copy failed'));
+}
+</script>
+<script>
+function toggleDarkMode(){
+  var root = document.documentElement;
+  var isDark = root.classList.toggle('dark-mode');
+  // keep body in sync for any legacy selectors
+  if (document.body && document.body.classList) {
+    document.body.classList.toggle('dark-mode', isDark);
+  }
+  try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(e){}
+}
+window.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+});
+</script>
+
+<!-- Final overrides: unify button colors (neon green) & keep delete red -->
+<style id="final-overrides">
+  .copy-btn,
+  .admin-only,
+  button,
+  .btn,
+  button[onclick="searchProductDetails()"],
+  button[onclick="checkPassword()"]{
+    background: linear-gradient(180deg, var(--accent), var(--accent-2)) !important;
+    color: #04140e !important;
+    border: 1px solid rgba(255,255,255,.06) !important;
+    box-shadow: 0 8px 26px rgba(0,255,160,.26), 0 0 0 1px rgba(0,255,160,.25) inset !important;
+  }
+  .delete-btn{
+    background: linear-gradient(180deg, #ff5d5d, #ef4444) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 26px rgba(239,68,68,.28), 0 0 0 1px rgba(239,68,68,.35) inset !important;
+  }
+</style>
+
+<!-- Final patch: keep toggleDarkMode aliased to toggleTheme and update icon/title reliably -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  try{
+    if (typeof window.toggleTheme === 'function') {
+      window.toggleDarkMode = window.toggleTheme;
+    }
+  }catch(e){}
+  var btn = document.querySelector('button[onclick^="toggleDarkMode"], button[onclick^="toggleTheme"]');
+  function refreshToggleIcon(){
+    var isDark = document.documentElement.classList.contains('dark-mode');
+    if (btn){
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      btn.setAttribute('title', isDark ? 'الوضع النهاري' : 'الوضع الليلي');
+    }
+  }
+  if (btn){
+    btn.addEventListener('click', function(){ setTimeout(refreshToggleIcon, 0); });
+  }
+  refreshToggleIcon();
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
